@@ -27,12 +27,15 @@
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="uBp-Z0-8Tm">
+                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uBp-Z0-8Tm">
                         <rect key="frame" x="100.5" y="71" width="51" height="31"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="onTintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="thumbTintColor" systemColor="systemGreenColor"/>
+                        <connections>
+                            <action selector="grabarEnable:" destination="KGk-i7-Jjw" eventType="valueChanged" id="ZUL-r7-c4f"/>
+                        </connections>
                     </switch>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Camara Chida" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QDu-mL-dMC">
                         <rect key="frame" x="253" y="10" width="107.5" height="21"/>
@@ -113,6 +116,7 @@
                 <outlet property="button" destination="IY4-Rh-73m" id="PUi-kw-5ID"/>
                 <outlet property="ip" destination="h9c-3N-ds3" id="j41-2P-bwR"/>
                 <outlet property="slotb" destination="s1T-tW-cPV" id="kgi-36-KzN"/>
+                <outlet property="swtc" destination="uBp-Z0-8Tm" id="QPL-Pb-ZdN"/>
             </connections>
             <point key="canvasLocation" x="94.756097560975604" y="64.067796610169495"/>
         </tableViewCell>

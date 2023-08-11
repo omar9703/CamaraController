@@ -8,7 +8,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "A43E36D9-03AB-45BD-B092-5E5CB1983524"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CamaraController/AddCamViewController.swift"
@@ -18,6 +18,70 @@
             endingLineNumber = "25"
             landmarkName = "addButton(_:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "38F02C41-ADAA-4790-B05F-93F6E797615F"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CamaraController/Representations/CamaraClass.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
+            landmarkName = "deleteCamera(ip:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5E7B315F-E6CB-4CD0-8633-BC7181F72DEE"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CamaraController/Representations/CamaraClass.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
+            landmarkName = "deleteCamera(ip:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "5E7B315F-E6CB-4CD0-8633-BC7181F72DEE - b3125360b5c0c679"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static CamaraController.CamaraEntity.deleteCamera(ip: Swift.String) -&gt; ()"
+                  moduleName = "CamaraController"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/omarcampos/Desktop/CamaraController/CamaraController/Representations/CamaraClass.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "72"
+                  endingLineNumber = "72"
+                  offsetFromSymbolStart = "1104">
+               </Location>
+               <Location
+                  uuid = "5E7B315F-E6CB-4CD0-8633-BC7181F72DEE - b3125360b5c0c6d6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static CamaraController.CamaraEntity.deleteCamera(ip: Swift.String) -&gt; ()"
+                  moduleName = "CamaraController"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/omarcampos/Desktop/CamaraController/CamaraController/Representations/CamaraClass.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "75"
+                  endingLineNumber = "75"
+                  offsetFromSymbolStart = "1024">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

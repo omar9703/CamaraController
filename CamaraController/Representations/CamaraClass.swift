@@ -44,6 +44,36 @@ class CamaraEntity
           print("Could not save. \(error), \(error.userInfo)")
         }
     }
+    public static func deleteCamera(ip : String)
+    {
+        guard let appDelegate =
+          UIApplication.shared.delegate as? AppDelegate else {
+          return
+        }
+        
+        // 1
+        let managedContext =
+          appDelegate.persistentContainer.viewContext
+        
+        let fetchRequest =
+        NSFetchRequest<NSManagedObject>(entityName: "Camara")
+        
+        fetchRequest.predicate = NSPredicate(format: "ip = %@", ip)
+            do
+            {
+                let cl = try managedContext.fetch(fetchRequest)
+
+                for entity in cl {
+
+                    managedContext.delete(entity)
+                }
+                try managedContext.save()
+            }
+            catch _ {
+                print("Could not delete")
+
+            }
+    }
     public static func getCamaras() -> [CamaraAction]?
     {
         guard let appDelegate =
@@ -113,7 +143,8 @@ class CamaraAction
     var SlotA : String?
     var SlotB : String?
     var Grabando : Bool = false
-    
+    var timer : Timer?
+    var grabarGeneral = true
     init(ip: String? = nil, nombre: String? = nil, Habilitado: Bool? = nil,SlotA: String? = nil,SlotB: String? = nil) {
         self.ip = ip
         self.nombre = nombre
@@ -125,17 +156,20 @@ class CamaraAction
     
     public func SetTimer()
     {
-        let timer = Timer.scheduledTimer(timeInterval: 10.0, target: self, selector: #selector(self.status(_:)), userInfo: nil, repeats: true)
-        self.status(timer)
-        
-
+        guard timer == nil else {return}
+        self.timer = Timer.scheduledTimer(timeInterval: 10.0, target: self, selector: #selector(self.status(_:)), userInfo: nil, repeats: true)
+        self.status(timer!)
 
     }
     @objc private func status(_ timer : Timer)
     {
         self.getStatus()
+        
     }
-    
+    public func stopTimerTest() {
+      timer?.invalidate()
+      timer = nil
+    }
     private func getStatus()
     {
         debugPrint("http://\(self.ip ?? "")/command/inquiry.cgi?inq=indicator")
