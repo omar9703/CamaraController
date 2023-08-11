@@ -19,6 +19,7 @@
 		10CC9C912A83EBFC00C41B18 /* CamaraTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10CC9C8F2A83EBFC00C41B18 /* CamaraTableViewCell.xib */; };
 		10CC9C942A83F27F00C41B18 /* CamaraClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CC9C932A83F27F00C41B18 /* CamaraClass.swift */; };
 		10CC9C962A83F9F700C41B18 /* AddCamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CC9C952A83F9F700C41B18 /* AddCamViewController.swift */; };
+		A62A86F189F6CD72F6FBDD57 /* Pods_CamaraController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 203388BDEA22F09F21AF1E58 /* Pods_CamaraController.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,9 @@
 		10CC9C8F2A83EBFC00C41B18 /* CamaraTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CamaraTableViewCell.xib; sourceTree = "<group>"; };
 		10CC9C932A83F27F00C41B18 /* CamaraClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CamaraClass.swift; sourceTree = "<group>"; };
 		10CC9C952A83F9F700C41B18 /* AddCamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCamViewController.swift; sourceTree = "<group>"; };
+		203388BDEA22F09F21AF1E58 /* Pods_CamaraController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CamaraController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA3B3E107D6E54F30D22A42A /* Pods-CamaraController.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CamaraController.debug.xcconfig"; path = "Target Support Files/Pods-CamaraController/Pods-CamaraController.debug.xcconfig"; sourceTree = "<group>"; };
+		C56D6203E2D25CF20212FF4F /* Pods-CamaraController.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CamaraController.release.xcconfig"; path = "Target Support Files/Pods-CamaraController/Pods-CamaraController.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +47,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				10CC9C8C2A81B38800C41B18 /* Alamofire in Frameworks */,
+				A62A86F189F6CD72F6FBDD57 /* Pods_CamaraController.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,6 +59,8 @@
 			children = (
 				10CC9C722A81B1FC00C41B18 /* CamaraController */,
 				10CC9C712A81B1FC00C41B18 /* Products */,
+				CF26AA0362D5F925DAEE09B6 /* Pods */,
+				19C4A55B6F36835B474F52D9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -100,6 +107,24 @@
 			path = Representations;
 			sourceTree = "<group>";
 		};
+		19C4A55B6F36835B474F52D9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				203388BDEA22F09F21AF1E58 /* Pods_CamaraController.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CF26AA0362D5F925DAEE09B6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BA3B3E107D6E54F30D22A42A /* Pods-CamaraController.debug.xcconfig */,
+				C56D6203E2D25CF20212FF4F /* Pods-CamaraController.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -107,9 +132,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 10CC9C872A81B1FD00C41B18 /* Build configuration list for PBXNativeTarget "CamaraController" */;
 			buildPhases = (
+				D98AB5BF70AD45B8E3A93FB7 /* [CP] Check Pods Manifest.lock */,
 				10CC9C6C2A81B1FC00C41B18 /* Sources */,
 				10CC9C6D2A81B1FC00C41B18 /* Frameworks */,
 				10CC9C6E2A81B1FC00C41B18 /* Resources */,
+				B08164A6469E346A8C47173A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -148,7 +175,7 @@
 			);
 			mainGroup = 10CC9C672A81B1FC00C41B18;
 			packageReferences = (
-				10CC9C8A2A81B38800C41B18 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				10CC9C8A2A81B38800C41B18 /* XCRemoteSwiftPackageReference "Alamofire.git" */,
 			);
 			productRefGroup = 10CC9C712A81B1FC00C41B18 /* Products */;
 			projectDirPath = "";
@@ -172,6 +199,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B08164A6469E346A8C47173A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CamaraController/Pods-CamaraController-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CamaraController/Pods-CamaraController-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CamaraController/Pods-CamaraController-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D98AB5BF70AD45B8E3A93FB7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CamaraController-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		10CC9C6C2A81B1FC00C41B18 /* Sources */ = {
@@ -326,6 +395,7 @@
 		};
 		10CC9C882A81B1FD00C41B18 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BA3B3E107D6E54F30D22A42A /* Pods-CamaraController.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -358,6 +428,7 @@
 		};
 		10CC9C892A81B1FD00C41B18 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C56D6203E2D25CF20212FF4F /* Pods-CamaraController.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -412,7 +483,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		10CC9C8A2A81B38800C41B18 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+		10CC9C8A2A81B38800C41B18 /* XCRemoteSwiftPackageReference "Alamofire.git" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
 			requirement = {
@@ -425,7 +496,7 @@
 /* Begin XCSwiftPackageProductDependency section */
 		10CC9C8B2A81B38800C41B18 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 10CC9C8A2A81B38800C41B18 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			package = 10CC9C8A2A81B38800C41B18 /* XCRemoteSwiftPackageReference "Alamofire.git" */;
 			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */

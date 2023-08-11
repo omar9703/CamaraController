@@ -8,7 +8,12 @@
 import UIKit
 import Alamofire
 
-class ViewController: UIViewController {
+class ViewController: UIViewController,camaraAddedDelegate {
+    func cameradded() {
+        camarass = CamaraEntity.getCamaras() ?? [CamaraAction]()
+        table.reloadData()
+    }
+    
     @IBOutlet weak var recordButton: UIButton!
     @IBOutlet weak var sswtc: UISwitch!
     @IBOutlet weak var enableLabel: UILabel!
@@ -89,23 +94,9 @@ class ViewController: UIViewController {
     @IBAction func grabarTodo(_ sender: UIButton) {
         if !configMode
         {
-            grabando.toggle()
-            if grabando
-            {
-                recordButton.layer.cornerRadius = 50
-                recordButton.layer.borderColor = UIColor.green.cgColor
-                recordButton.layer.borderWidth = 2
-                recordButton.setTitle("Grabando", for: .normal)
-            }
-            else
-            {
-                recordButton.layer.cornerRadius = 50
-                recordButton.layer.borderColor = UIColor.green.cgColor
-                recordButton.layer.borderWidth = 2
-                recordButton.setTitle("StandBy", for: .normal)
-            }
             if camarass.count > 0
             {
+                grabando.toggle()
                 camarass.forEach { c in
                     if c.Grabando != grabando && c.grabarGeneral
                     {
@@ -113,6 +104,20 @@ class ViewController: UIViewController {
                     }
                 }
                 table.reloadData()
+                if grabando
+                {
+                    recordButton.layer.cornerRadius = 50
+                    recordButton.layer.borderColor = UIColor.red.cgColor
+                    recordButton.layer.borderWidth = 2
+                    recordButton.setTitle("Grabando", for: .normal)
+                }
+                else
+                {
+                    recordButton.layer.cornerRadius = 50
+                    recordButton.layer.borderColor = UIColor.green.cgColor
+                    recordButton.layer.borderWidth = 2
+                    recordButton.setTitle("StandBy", for: .normal)
+                }
             }
             else
             {
@@ -126,6 +131,7 @@ class ViewController: UIViewController {
         if configMode
         {
             let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "config") as! AddCamViewController
+            vc.delegate = self
             self.present(vc, animated: true, completion: nil)
         }
     }
@@ -142,6 +148,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource
         {
             return UITableViewCell()
         }
+        cell.setup(c: camarass[indexPath.row])
         cell.Nombre.text = camarass[indexPath.row].nombre
         cell.ip.text = camarass[indexPath.row].ip
         cell.SlotA.text = (camarass[indexPath.row].SlotA ?? "0") + " Min"

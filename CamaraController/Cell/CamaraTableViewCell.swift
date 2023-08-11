@@ -34,7 +34,7 @@ class CamaraTableViewCell: UITableViewCell {
     }
     @IBAction func grabarEnable(_ sender: UISwitch) {
         cam?.grabarGeneral = sender.isOn
-        
+        debugPrint(cam?.grabarGeneral)
     }
     
 }

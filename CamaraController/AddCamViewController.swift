@@ -7,8 +7,12 @@
 
 import UIKit
 
-class AddCamViewController: UIViewController {
+protocol camaraAddedDelegate {
+    func cameradded()
+}
 
+class AddCamViewController: UIViewController {
+    var delegate : camaraAddedDelegate?
     @IBOutlet weak var nombreField: UITextField!
     @IBOutlet weak var ipField: UITextField!
     override func viewDidLoad() {
@@ -24,6 +28,7 @@ class AddCamViewController: UIViewController {
             {
                 CamaraEntity.saveCam(ip: ipField.text ?? "", nombre: nombreField.text ?? "")
                 self.dismiss(animated: true)
+                delegate?.cameradded()
             }
             else
             {

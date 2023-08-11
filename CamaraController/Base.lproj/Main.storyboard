@@ -76,7 +76,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JRs-kp-WhQ">
-                                <rect key="frame" x="1055" y="72.5" width="110" height="40"/>
+                                <rect key="frame" x="1055" y="127.5" width="110" height="40"/>
                                 <color key="backgroundColor" red="0.90588235289999997" green="0.098039215690000001" blue="0.29803921570000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="110" id="VfL-5D-0R9"/>
@@ -151,7 +151,7 @@
                             <constraint firstItem="Gsm-M4-fPg" firstAttribute="centerY" secondItem="rg1-Lm-9gQ" secondAttribute="centerY" id="XKJ-AW-XjY"/>
                             <constraint firstItem="eWv-Bz-ffg" firstAttribute="centerY" secondItem="eMr-t1-obq" secondAttribute="centerY" id="aGA-jf-qZv"/>
                             <constraint firstItem="Zz6-LN-zPV" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="c2u-iV-VdJ"/>
-                            <constraint firstItem="JRs-kp-WhQ" firstAttribute="centerY" secondItem="Ogh-ok-FQ5" secondAttribute="centerY" id="fWv-VG-MZL"/>
+                            <constraint firstItem="JRs-kp-WhQ" firstAttribute="centerY" secondItem="Ogh-ok-FQ5" secondAttribute="centerY" constant="55" id="fWv-VG-MZL"/>
                             <constraint firstItem="Ogh-ok-FQ5" firstAttribute="leading" secondItem="Zz6-LN-zPV" secondAttribute="trailing" constant="15" id="fcy-Uf-Ba6"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="2Ok-Pe-SNf" secondAttribute="bottom" id="gKg-bI-hx0"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="rg1-Lm-9gQ" secondAttribute="trailing" constant="10" id="mr3-fj-bva"/>
@@ -202,7 +202,7 @@
                                             <constraint firstAttribute="width" constant="180" id="umx-hy-k0y"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nombre" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JlT-mN-iLf">
                                         <rect key="frame" x="285" y="45" width="61.5" height="21"/>
