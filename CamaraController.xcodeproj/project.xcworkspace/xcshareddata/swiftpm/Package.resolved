@@ -8,6 +8,15 @@
         "revision" : "bc268c28fb170f494de9e9927c371b8342979ece",
         "version" : "5.7.1"
       }
+    },
+    {
+      "identity" : "iqkeyboardmanager",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/hackiftekhar/IQKeyboardManager.git",
+      "state" : {
+        "revision" : "ea08e08958890043019d248065fe3d825f338087",
+        "version" : "6.5.12"
+      }
     }
   ],
   "version" : 2
