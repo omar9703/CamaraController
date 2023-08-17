@@ -173,7 +173,7 @@ class CamaraAction
     private func getStatus()
     {
         debugPrint("http://\(self.ip ?? "")/command/inquiry.cgi?inq=indicator")
-        AF.request("http://\(self.ip ?? "")/command/inquiry.cgi?inq=indicator").authenticate(username: "admin", password: "Avs2020.").responseData { (responseObject) -> Void in
+        AF.request("http://\(self.ip ?? "")/command/inquiry.cgi?inq=indicator").authenticate(username: "AVSCAMARAS", password: "Avs2020.").responseData { (responseObject) -> Void in
             if let data = responseObject.data, let utf8Text = String(data: data, encoding: .utf8) {
                     print("Data: \(utf8Text)")
                 let elements = utf8Text.components(separatedBy:"&")
@@ -207,9 +207,9 @@ class CamaraAction
     public func SetRecording()
     {
         self.Grabando.toggle()
-        AF.request("http://\(self.ip ?? "")/command/cameraoperation.cgi?MediaRecording=press").authenticate(username: "admin", password: "Avs2020.").responseData { (responseObject) -> Void in
+        AF.request("http://\(self.ip ?? "")/command/cameraoperation.cgi?MediaRecording=press").authenticate(username: "AVSCAMARAS", password: "Avs2020.").responseData { (responseObject) -> Void in
             
-            AF.request("http://\(self.ip ?? "")/command/cameraoperation.cgi?MediaRecording=release").authenticate(username: "admin", password: "Avs2020.").responseData { (responseObject) -> Void in
+            AF.request("http://\(self.ip ?? "")/command/cameraoperation.cgi?MediaRecording=release").authenticate(username: "AVSCAMARAS", password: "Avs2020.").responseData { (responseObject) -> Void in
                 
                 
             }
