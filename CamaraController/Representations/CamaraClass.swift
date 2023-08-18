@@ -145,12 +145,10 @@ class CamaraAction
     var Grabando : Bool = false
     var timer : Timer?
     var grabarGeneral = true
-    init(ip: String? = nil, nombre: String? = nil, Habilitado: Bool? = nil,SlotA: String? = nil,SlotB: String? = nil) {
+    init(ip: String? = nil, nombre: String? = nil, Habilitado: Bool? = nil) {
         self.ip = ip
         self.nombre = nombre
         self.Habilitado = Habilitado
-        self.SlotA = SlotA
-        self.SlotB = SlotB
     }
     
     

@@ -128,11 +128,17 @@ class ViewController: UIViewController,camaraAddedDelegate {
         }
     }
     @IBAction func AddCamara(_ sender: UIButton) {
-        if configMode
+        if !grabando
         {
             let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "config") as! AddCamViewController
             vc.delegate = self
             self.present(vc, animated: true, completion: nil)
+            enableLabel.text = "Habilitar Monitoreo"
+            configMode = true
+            sswtc.isOn = false
+            camarass.forEach { c in
+                c.stopTimerTest()
+            }
         }
     }
 }
@@ -155,15 +161,15 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource
         cell.slotb.text = (camarass[indexPath.row].SlotB ?? "0") + " Min"
         if camarass[indexPath.row].Grabando
         {
-            cell.button.layer.cornerRadius = 43
+            cell.button.layer.cornerRadius = 27.5
             cell.button.layer.borderColor = UIColor.red.cgColor
             cell.button.layer.borderWidth = 2
-            cell.button.setTitle("Grabando", for: .normal)
+            cell.button.setTitle("Rec", for: .normal)
         }
         
         else
         {
-            cell.button.layer.cornerRadius = 43
+            cell.button.layer.cornerRadius = 27.5
             cell.button.layer.borderColor = UIColor.green.cgColor
             cell.button.layer.borderWidth = 2
             cell.button.setTitle("StandBy", for: .normal)
@@ -179,14 +185,14 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource
         camarass[sender.tag].SetRecording()
         if camarass[sender.tag].Grabando
         {
-            sender.layer.cornerRadius = 43
+            sender.layer.cornerRadius = 27.5
             sender.layer.borderColor = UIColor.red.cgColor
             sender.layer.borderWidth = 2
-            sender.setTitle("Grabando", for: .normal)
+            sender.setTitle("Rec", for: .normal)
         }
         else
         {
-            sender.layer.cornerRadius = 43
+            sender.layer.cornerRadius = 27.5
             sender.layer.borderColor = UIColor.green.cgColor
             sender.layer.borderWidth = 2
             sender.setTitle("StandBy", for: .normal)
