@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="ipad10_9rounded" orientation="portrait" layout="fullscreen" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -74,6 +75,19 @@
                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </state>
                     </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mfW-QC-s2v">
+                        <rect key="frame" x="33" y="15" width="55" height="55"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="55" id="Upa-yi-r8H"/>
+                            <constraint firstAttribute="height" constant="55" id="rNd-nh-n7n"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                        <state key="normal" title="Display">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </state>
+                    </button>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
@@ -84,6 +98,8 @@
                     <constraint firstAttribute="trailingMargin" secondItem="s1T-tW-cPV" secondAttribute="trailing" constant="5" id="CjN-hs-Sav"/>
                     <constraint firstItem="IY4-Rh-73m" firstAttribute="leading" secondItem="h9c-3N-ds3" secondAttribute="trailing" constant="85" id="FxU-pN-wnQ"/>
                     <constraint firstItem="s1T-tW-cPV" firstAttribute="centerY" secondItem="wLx-67-H9c" secondAttribute="centerY" id="VXT-DS-wLC"/>
+                    <constraint firstItem="mfW-QC-s2v" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="ZWV-Kp-7Ef"/>
+                    <constraint firstItem="mfW-QC-s2v" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="33" id="bAH-aG-gpz"/>
                     <constraint firstItem="IY4-Rh-73m" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="9" id="kKm-ku-jTM"/>
                     <constraint firstAttribute="bottom" secondItem="h9c-3N-ds3" secondAttribute="bottom" constant="10" id="lYf-yH-h1T"/>
                     <constraint firstItem="h9c-3N-ds3" firstAttribute="centerX" secondItem="QDu-mL-dMC" secondAttribute="centerX" id="mb9-QJ-aJc"/>
@@ -97,6 +113,7 @@
                 <outlet property="Nombre" destination="QDu-mL-dMC" id="esC-m8-UAD"/>
                 <outlet property="SlotA" destination="wLx-67-H9c" id="sSo-Wy-wCx"/>
                 <outlet property="button" destination="IY4-Rh-73m" id="PUi-kw-5ID"/>
+                <outlet property="displayButton" destination="mfW-QC-s2v" id="bzY-DO-kMu"/>
                 <outlet property="ip" destination="h9c-3N-ds3" id="j41-2P-bwR"/>
                 <outlet property="slotb" destination="s1T-tW-cPV" id="kgi-36-KzN"/>
                 <outlet property="swtc" destination="uBp-Z0-8Tm" id="QPL-Pb-ZdN"/>
@@ -106,7 +123,7 @@
     </objects>
     <resources>
         <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

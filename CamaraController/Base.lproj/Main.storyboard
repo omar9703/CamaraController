@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="ipad10_9rounded" orientation="landscape" layout="fullscreen" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -158,6 +159,18 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rtq-0s-20Z">
+                                <rect key="frame" x="1040" y="624" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="hii-h9-Xgx"/>
+                                    <constraint firstAttribute="height" constant="100" id="t1t-Uq-PxR"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="DisplayOn"/>
+                                <connections>
+                                    <action selector="DisplayAll:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LPa-xb-Jm7"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -189,7 +202,9 @@
                             <constraint firstItem="vuI-Sz-sSR" firstAttribute="leading" secondItem="Zz6-LN-zPV" secondAttribute="trailing" constant="15" id="sNk-R8-pgE"/>
                             <constraint firstItem="eMr-t1-obq" firstAttribute="leading" secondItem="uA7-eP-CSC" secondAttribute="trailing" constant="10" id="sl3-Xo-AlG"/>
                             <constraint firstItem="uA7-eP-CSC" firstAttribute="centerY" secondItem="vuI-Sz-sSR" secondAttribute="centerY" id="szJ-h4-Y9V"/>
+                            <constraint firstItem="rtq-0s-20Z" firstAttribute="top" secondItem="2Dy-Ot-cqt" secondAttribute="bottom" constant="60" id="tRF-Ca-6Xs"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="2Dy-Ot-cqt" secondAttribute="trailing" constant="40" id="uw1-18-opJ"/>
+                            <constraint firstItem="rtq-0s-20Z" firstAttribute="centerX" secondItem="2Dy-Ot-cqt" secondAttribute="centerX" id="xgb-ig-Pr2"/>
                             <constraint firstItem="rg1-Lm-9gQ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="zDb-0L-JVg"/>
                             <constraint firstItem="vuI-Sz-sSR" firstAttribute="top" secondItem="Ogh-ok-FQ5" secondAttribute="bottom" constant="20" id="zKu-oX-I7t"/>
                             <constraint firstItem="eWv-Bz-ffg" firstAttribute="leading" secondItem="eMr-t1-obq" secondAttribute="trailing" constant="10" id="zoy-67-S5S"/>
@@ -197,6 +212,7 @@
                     </view>
                     <connections>
                         <outlet property="addButton" destination="JRs-kp-WhQ" id="8zR-yq-e6r"/>
+                        <outlet property="displayButton" destination="rtq-0s-20Z" id="0K7-NM-X7L"/>
                         <outlet property="enableLabel" destination="Gsm-M4-fPg" id="bex-dq-oYp"/>
                         <outlet property="recordButton" destination="2Dy-Ot-cqt" id="nFl-So-XAP"/>
                         <outlet property="sswtc" destination="rg1-Lm-9gQ" id="o9H-RR-eKe"/>

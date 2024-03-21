@@ -8,6 +8,7 @@
 import UIKit
 
 class CamaraTableViewCell: UITableViewCell {
+    @IBOutlet weak var displayButton: UIButton!
     @IBOutlet weak var swtc: UISwitch!
     @IBOutlet weak var ip: UILabel!
     var grabar = true
@@ -34,6 +35,7 @@ class CamaraTableViewCell: UITableViewCell {
     }
     @IBAction func grabarEnable(_ sender: UISwitch) {
         cam?.grabarGeneral = sender.isOn
+        cam?.displayGeneral = sender.isOn
         debugPrint(cam?.grabarGeneral)
     }
     

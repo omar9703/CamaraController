@@ -143,8 +143,10 @@ class CamaraAction
     var SlotA : String?
     var SlotB : String?
     var Grabando : Bool = false
+    var Screen : Bool = false
     var timer : Timer?
     var grabarGeneral = true
+    var displayGeneral = true
     init(ip: String? = nil, nombre: String? = nil, Habilitado: Bool? = nil) {
         self.ip = ip
         self.nombre = nombre
@@ -162,6 +164,7 @@ class CamaraAction
     @objc private func status(_ timer : Timer)
     {
         self.getStatus()
+        self.getStatusRecording()
         
     }
     public func stopTimerTest() {
@@ -173,7 +176,7 @@ class CamaraAction
         debugPrint("http://\(self.ip ?? "")/command/inquiry.cgi?inq=indicator")
         AF.request("http://\(self.ip ?? "")/command/inquiry.cgi?inq=indicator").authenticate(username: "AVSCAMARAS", password: "Avs2020.").responseData { (responseObject) -> Void in
             if let data = responseObject.data, let utf8Text = String(data: data, encoding: .utf8) {
-                    print("Data: \(utf8Text)")
+//                    print("Data: \(utf8Text)")
                 let elements = utf8Text.components(separatedBy:"&")
                 if let SlotAIndicator = elements.filter({$0.contains("IndicatorSlotARemainState")}).first
                 {
@@ -191,23 +194,51 @@ class CamaraAction
                     debugPrint(String(Int(minutos)))
                     self.SlotB = String(Int(minutos))
                 }
-                if utf8Text.contains("standby")
-                {
-                    self.Grabando = false
-                }
-                else
-                {
-                    self.Grabando = true
-                }
                 }
         }
     }
+    
+    private func getStatusRecording()
+    {
+        AF.request("http://\(self.ip ?? "")/command/inquiry.cgi?inq=cameraoperation").authenticate(username: "AVSCAMARAS", password: "Avs2020.").responseData { (responseObject) -> Void in
+            if let data = responseObject.data, let utf8Text = String(data: data, encoding: .utf8) {
+                debugPrint("Data: \(utf8Text)")
+                let elements = utf8Text.components(separatedBy:"&")
+                if let SlotAIndicator = elements.filter({$0.contains("MediaRecordingStatus=")}).first
+                {
+                    debugPrint(SlotAIndicator)
+                    let sA = SlotAIndicator.components(separatedBy:"=")
+                    let status = String(sA[1])
+                    if status == "rec"
+                    {
+                        self.Grabando = true
+                    }
+                    else
+                    {
+                        self.Grabando = false
+                    }
+                }
+            }
+        }
+    }
+    
     public func SetRecording()
     {
         self.Grabando.toggle()
         AF.request("http://\(self.ip ?? "")/command/cameraoperation.cgi?MediaRecording=press").authenticate(username: "AVSCAMARAS", password: "Avs2020.").responseData { (responseObject) -> Void in
             
             AF.request("http://\(self.ip ?? "")/command/cameraoperation.cgi?MediaRecording=release").authenticate(username: "AVSCAMARAS", password: "Avs2020.").responseData { (responseObject) -> Void in
+                
+                
+            }
+        }
+    }
+    public func SetDisplay()
+    {
+        self.Screen.toggle()
+        AF.request("http://\(self.ip ?? "")/command/cameraoperation.cgi?DisplayButton=press").authenticate(username: "AVSCAMARAS", password: "Avs2020.").responseData { (responseObject) -> Void in
+            
+            AF.request("http://\(self.ip ?? "")/command/cameraoperation.cgi?DisplayButton=release").authenticate(username: "AVSCAMARAS", password: "Avs2020.").responseData { (responseObject) -> Void in
                 
                 
             }

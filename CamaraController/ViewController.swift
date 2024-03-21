@@ -14,6 +14,7 @@ class ViewController: UIViewController,camaraAddedDelegate {
         table.reloadData()
     }
     
+    @IBOutlet weak var displayButton: UIButton!
     @IBOutlet weak var recordButton: UIButton!
     @IBOutlet weak var sswtc: UISwitch!
     @IBOutlet weak var enableLabel: UILabel!
@@ -21,6 +22,7 @@ class ViewController: UIViewController,camaraAddedDelegate {
     @IBOutlet weak var table: UITableView!
     var configMode = true
     var grabando = false
+    var display = false
     var camarass = [CamaraAction]()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,17 +75,19 @@ class ViewController: UIViewController,camaraAddedDelegate {
         recordButton.layer.borderColor = UIColor.green.cgColor
         recordButton.layer.borderWidth = 2
         recordButton.setTitle("StandBy", for: .normal)
+        
+        displayButton.layer.cornerRadius = 50
+        displayButton.layer.borderColor = UIColor.green.cgColor
+        displayButton.layer.borderWidth = 2
+        displayButton.setTitle("DisplayOff", for: .normal)
     }
     override func viewDidAppear(_ animated: Bool) {
         camarass = CamaraEntity.getCamaras() ?? [CamaraAction]()
         table.reloadData()
-        
-        if camarass.count > 0
-        {
+
             DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
                 let timer = Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(self.status(_:)), userInfo: nil, repeats: true)
                 self.status(timer)
-            }
         }
     }
     @objc private func status(_ timer : Timer)
@@ -127,6 +131,45 @@ class ViewController: UIViewController,camaraAddedDelegate {
             }
         }
     }
+    
+    @IBAction func DisplayAll(_ sender: UIButton) {
+        if !configMode
+        {
+            if camarass.count > 0
+            {
+                display.toggle()
+                camarass.forEach { c in
+                    if c.Screen != display && c.displayGeneral
+                    {
+                        c.SetDisplay()
+                    }
+                }
+                table.reloadData()
+                if display
+                {
+                    sender.layer.cornerRadius = 50
+                    sender.layer.borderColor = UIColor.red.cgColor
+                    sender.layer.borderWidth = 2
+                    sender.setTitle("DisplayOn", for: .normal)
+                }
+                else
+                {
+                    sender.layer.cornerRadius = 50
+                    sender.layer.borderColor = UIColor.green.cgColor
+                    sender.layer.borderWidth = 2
+                    sender.setTitle("DisplayOff", for: .normal)
+                }
+            }
+            else
+            {
+                let alert  = UIAlertController(title: "Error", message: "No hay camaras disponibles", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Aceptar", style: .default))
+                self.present(alert, animated: true)
+            }
+        }
+    }
+    
+    
     @IBAction func AddCamara(_ sender: UIButton) {
         if !grabando
         {
@@ -174,9 +217,25 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource
             cell.button.layer.borderWidth = 2
             cell.button.setTitle("StandBy", for: .normal)
         }
-        cell.button.addTarget(self, action: #selector(changeRecordingStatus(_:)), for: .touchUpInside)
-        cell.button.tag = indexPath.row
+        if camarass[indexPath.row].Screen
+        {
+            cell.displayButton.layer.cornerRadius = 27.5
+            cell.displayButton.layer.borderColor = UIColor.red.cgColor
+            cell.displayButton.layer.borderWidth = 2
+            cell.displayButton.setTitle("DisplayOn", for: .normal)
+        }
         
+        else
+        {
+            cell.displayButton.layer.cornerRadius = 27.5
+            cell.displayButton.layer.borderColor = UIColor.green.cgColor
+            cell.displayButton.layer.borderWidth = 2
+            cell.displayButton.setTitle("DisplayOff", for: .normal)
+        }
+        cell.button.addTarget(self, action: #selector(changeRecordingStatus(_:)), for: .touchUpInside)
+        cell.displayButton.addTarget(self, action: #selector(changeDisplayStatus(_:)), for: .touchUpInside)
+        cell.button.tag = indexPath.row
+        cell.displayButton.tag = indexPath.row
         cell.selectionStyle = .none
         return cell
     }
@@ -196,6 +255,24 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource
             sender.layer.borderColor = UIColor.green.cgColor
             sender.layer.borderWidth = 2
             sender.setTitle("StandBy", for: .normal)
+        }
+    }
+    @objc func changeDisplayStatus(_ sender : UIButton)
+    {
+        camarass[sender.tag].SetDisplay()
+        if camarass[sender.tag].Screen
+        {
+            sender.layer.cornerRadius = 27.5
+            sender.layer.borderColor = UIColor.red.cgColor
+            sender.layer.borderWidth = 2
+            sender.setTitle("DisplayOn", for: .normal)
+        }
+        else
+        {
+            sender.layer.cornerRadius = 27.5
+            sender.layer.borderColor = UIColor.green.cgColor
+            sender.layer.borderWidth = 2
+            sender.setTitle("DisplayOff", for: .normal)
         }
     }
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
