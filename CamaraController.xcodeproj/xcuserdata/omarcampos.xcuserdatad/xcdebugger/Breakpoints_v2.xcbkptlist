@@ -50,38 +50,6 @@
             endingLineNumber = "73"
             landmarkName = "deleteCamera(ip:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "5E7B315F-E6CB-4CD0-8633-BC7181F72DEE - b3125360b5c0c679"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "static CamaraController.CamaraEntity.deleteCamera(ip: Swift.String) -&gt; ()"
-                  moduleName = "CamaraController"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/omarcampos/Desktop/CamaraController/CamaraController/Representations/CamaraClass.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "72"
-                  endingLineNumber = "72"
-                  offsetFromSymbolStart = "1104">
-               </Location>
-               <Location
-                  uuid = "5E7B315F-E6CB-4CD0-8633-BC7181F72DEE - b3125360b5c0c6d6"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "static CamaraController.CamaraEntity.deleteCamera(ip: Swift.String) -&gt; ()"
-                  moduleName = "CamaraController"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/omarcampos/Desktop/CamaraController/CamaraController/Representations/CamaraClass.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "75"
-                  endingLineNumber = "75"
-                  offsetFromSymbolStart = "1024">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -126,8 +94,8 @@
             filePath = "CamaraController/Representations/CamaraClass.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "205"
-            endingLineNumber = "205"
+            startingLineNumber = "206"
+            endingLineNumber = "206"
             landmarkName = "getStatusRecording()"
             landmarkType = "7">
          </BreakpointContent>
@@ -142,42 +110,10 @@
             filePath = "CamaraController/Representations/CamaraClass.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "203"
-            endingLineNumber = "203"
+            startingLineNumber = "204"
+            endingLineNumber = "204"
             landmarkName = "getStatusRecording()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "314A76AB-E41A-4F39-BF3E-A45D2CCB86DE - 1fade44bc9336966"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "CamaraController.CamaraAction.getStatusRecording() -&gt; ()"
-                  moduleName = "CamaraController"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/omarcampos/Desktop/CamaraController/CamaraController/Representations/CamaraClass.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "211"
-                  endingLineNumber = "211"
-                  offsetFromSymbolStart = "28">
-               </Location>
-               <Location
-                  uuid = "314A76AB-E41A-4F39-BF3E-A45D2CCB86DE - 4fc00dec83ee08cf"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Foundation.Data, Alamofire.AFError&gt;) -&gt; () in CamaraController.CamaraAction.getStatusRecording() -&gt; ()"
-                  moduleName = "CamaraController"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/omarcampos/Desktop/CamaraController/CamaraController/Representations/CamaraClass.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "212"
-                  endingLineNumber = "212"
-                  offsetFromSymbolStart = "140">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -190,42 +126,10 @@
             filePath = "CamaraController/Representations/CamaraClass.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "204"
-            endingLineNumber = "204"
+            startingLineNumber = "205"
+            endingLineNumber = "205"
             landmarkName = "getStatusRecording()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "F1DA709D-715E-4D7A-9E9B-AAF981FD1407 - 4fc00dec83ee08cf"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Foundation.Data, Alamofire.AFError&gt;) -&gt; () in CamaraController.CamaraAction.getStatusRecording() -&gt; ()"
-                  moduleName = "CamaraController"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/omarcampos/Desktop/CamaraController/CamaraController/Representations/CamaraClass.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "212"
-                  endingLineNumber = "212"
-                  offsetFromSymbolStart = "140">
-               </Location>
-               <Location
-                  uuid = "F1DA709D-715E-4D7A-9E9B-AAF981FD1407 - 4fc00dec83ee08cf"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Foundation.Data, Alamofire.AFError&gt;) -&gt; () in CamaraController.CamaraAction.getStatusRecording() -&gt; ()"
-                  moduleName = "CamaraController"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/omarcampos/Desktop/CamaraController/CamaraController/Representations/CamaraClass.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "212"
-                  endingLineNumber = "212"
-                  offsetFromSymbolStart = "260">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -238,8 +142,8 @@
             filePath = "CamaraController/Representations/CamaraClass.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "214"
-            endingLineNumber = "214"
+            startingLineNumber = "215"
+            endingLineNumber = "215"
             landmarkName = "getStatusRecording()"
             landmarkType = "7">
          </BreakpointContent>
@@ -254,8 +158,8 @@
             filePath = "CamaraController/Representations/CamaraClass.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "218"
-            endingLineNumber = "218"
+            startingLineNumber = "219"
+            endingLineNumber = "219"
             landmarkName = "getStatusRecording()"
             landmarkType = "7">
          </BreakpointContent>
@@ -270,8 +174,8 @@
             filePath = "CamaraController/Representations/CamaraClass.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "212"
-            endingLineNumber = "212"
+            startingLineNumber = "213"
+            endingLineNumber = "213"
             landmarkName = "getStatusRecording()"
             landmarkType = "7">
          </BreakpointContent>
@@ -286,8 +190,8 @@
             filePath = "CamaraController/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "205"
-            endingLineNumber = "205"
+            startingLineNumber = "191"
+            endingLineNumber = "191"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>

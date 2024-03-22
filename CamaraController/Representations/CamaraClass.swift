@@ -194,6 +194,7 @@ class CamaraAction
                     debugPrint(String(Int(minutos)))
                     self.SlotB = String(Int(minutos))
                 }
+
                 }
         }
     }

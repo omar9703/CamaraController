@@ -77,9 +77,9 @@ class ViewController: UIViewController,camaraAddedDelegate {
         recordButton.setTitle("StandBy", for: .normal)
         
         displayButton.layer.cornerRadius = 50
-        displayButton.layer.borderColor = UIColor.green.cgColor
+        displayButton.layer.borderColor = UIColor.gray.cgColor
         displayButton.layer.borderWidth = 2
-        displayButton.setTitle("DisplayOff", for: .normal)
+        displayButton.setTitle("Display", for: .normal)
     }
     override func viewDidAppear(_ animated: Bool) {
         camarass = CamaraEntity.getCamaras() ?? [CamaraAction]()
@@ -139,26 +139,12 @@ class ViewController: UIViewController,camaraAddedDelegate {
             {
                 display.toggle()
                 camarass.forEach { c in
-                    if c.Screen != display && c.displayGeneral
+                    if  c.displayGeneral
                     {
                         c.SetDisplay()
                     }
                 }
                 table.reloadData()
-                if display
-                {
-                    sender.layer.cornerRadius = 50
-                    sender.layer.borderColor = UIColor.red.cgColor
-                    sender.layer.borderWidth = 2
-                    sender.setTitle("DisplayOn", for: .normal)
-                }
-                else
-                {
-                    sender.layer.cornerRadius = 50
-                    sender.layer.borderColor = UIColor.green.cgColor
-                    sender.layer.borderWidth = 2
-                    sender.setTitle("DisplayOff", for: .normal)
-                }
             }
             else
             {
@@ -217,21 +203,11 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource
             cell.button.layer.borderWidth = 2
             cell.button.setTitle("StandBy", for: .normal)
         }
-        if camarass[indexPath.row].Screen
-        {
             cell.displayButton.layer.cornerRadius = 27.5
-            cell.displayButton.layer.borderColor = UIColor.red.cgColor
+            cell.displayButton.layer.borderColor = UIColor.gray.cgColor
             cell.displayButton.layer.borderWidth = 2
-            cell.displayButton.setTitle("DisplayOn", for: .normal)
-        }
-        
-        else
-        {
-            cell.displayButton.layer.cornerRadius = 27.5
-            cell.displayButton.layer.borderColor = UIColor.green.cgColor
-            cell.displayButton.layer.borderWidth = 2
-            cell.displayButton.setTitle("DisplayOff", for: .normal)
-        }
+            cell.displayButton.setTitle("Display", for: .normal)
+
         cell.button.addTarget(self, action: #selector(changeRecordingStatus(_:)), for: .touchUpInside)
         cell.displayButton.addTarget(self, action: #selector(changeDisplayStatus(_:)), for: .touchUpInside)
         cell.button.tag = indexPath.row
@@ -260,20 +236,6 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource
     @objc func changeDisplayStatus(_ sender : UIButton)
     {
         camarass[sender.tag].SetDisplay()
-        if camarass[sender.tag].Screen
-        {
-            sender.layer.cornerRadius = 27.5
-            sender.layer.borderColor = UIColor.red.cgColor
-            sender.layer.borderWidth = 2
-            sender.setTitle("DisplayOn", for: .normal)
-        }
-        else
-        {
-            sender.layer.cornerRadius = 27.5
-            sender.layer.borderColor = UIColor.green.cgColor
-            sender.layer.borderWidth = 2
-            sender.setTitle("DisplayOff", for: .normal)
-        }
     }
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         if configMode
